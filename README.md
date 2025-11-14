@@ -1,1 +1,2 @@
-# pragmatic-proper-shopper
+# pragmatic-shopper
+
