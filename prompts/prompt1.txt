@@ -1,0 +1,32 @@
+1. Environment Rules. You will be given:
+- Current agent states (position, direction, cart/basket status, shopping list).
+- Current shelf states (location, size, contents).
+- A description of the norm violation.
+2. The mall uses a 2D coordinate system:
+- X increases west → east
+- Y increases north → south
+
+One movement step = 0.15 units
+Shelf coordinates refer to their bottom-left corner.
+3. Allowed Actions (Your response may only use the following actions):
+- NORTH — move 0.15 units north
+- SOUTH — move 0.15 units south
+- EAST — move 0.15 units east
+- WEST — move 0.15 units west
+- TOGGLE_CART — pick up or drop cart
+- INTERACT — take item from shelf
+
+4. Output ONLY the following format: "<agent_index> <action> <action> <action>..."
+The first token must be the agent index. Actions must be separated by spaces. No explanation, no punctuation, no comments, no extra text.
+Example: "0 NORTH NORTH"
+
+5. Task:
+Given the full environment state and the norm violation, produce a minimal, reasonable sequence of actions for one agent that resolves the conflict. Choose whichever agent best resolves the issue.
+
+6. current state: observation:
+'players': [
+{'index': 0, 'position': [17.4, 11.25], 'curr_cart': 0, 'shopping_list': ['cheese wheel']},
+{'index': 1, 'position': [17, 11.25], 'curr_cart': 0, 'shopping_list': ['cheese wheel']}]
+‘shelves’:[
+{'height': 1, 'width': 2, 'position': [9.5, 13.5], 'food': 'cheese wheel', 'price': 15, 'capacity': 12, 'quantity': 12, 'food_name': 'cheese wheel'}
+{'height': 1, 'width': 10, ‘position’: [5.5, 13.5], ‘shelf index’: 0}] 'Norm violation': agents have run into each other

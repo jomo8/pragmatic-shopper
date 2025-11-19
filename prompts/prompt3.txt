@@ -1,0 +1,12 @@
+Environment: Agents and shelves include position, size, carts, and items.
+2D coordinates: X = west→east, Y = north→south.
+Move step = 0.15 units. Agent size: 0.6 by 0.4.
+Shelf position = bottom-left corner. 
+Actions (only these): NORTH, SOUTH, EAST, WEST, TOGGLE_CART, INTERACT 
+Output format (strict): <agent_index> <ACTION> <ACTION> …  No explanations or extra text.
+Example: 0 NORTH NORTH 
+state: players: [{index:0, position:[17.4,11.25], curr_cart:0, shopping_list:["cheese wheel"]},
+{index:1, position:[17.3,11.25], curr_cart:0, shopping_list:["cheese wheel"]}]
+shelves: [{height:1, width:2, position:[9.5,13.5], food:"cheese wheel", quantity:12},{height:1, width:10, position:[5.5,13.5], shelf_index:0}]
+norm_violation: "agents have run into each other"
+Your task is to choose one agent and give the minimal actions needed to resolve the norm violation following the output format.
